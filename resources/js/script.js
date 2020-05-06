@@ -26,7 +26,8 @@
         function (responseText) {
             document.querySelector("#main-content")
                 .innerHTML = responseText;
-            loadAllCharts()
+            //loadAllCharts() 
+            myVar();
       },
       false);
     });
@@ -45,9 +46,11 @@
     function myTimer() {
         loadCharts1("chartContainer1");
         loadCharts2("chartContainer2");
-    }
-    var myVar = setInterval(myTimer, 10000);
-    loadCharts3("chartContainer3");
+    };
+    var myVar = function() {
+        setInterval(myTimer, 10000);
+        loadCharts3("chartContainer3");
+    };
 
     var loadCharts1 = function (selector) {
         d3.csv("data/5minutesago-1.csv").then(function(data) {
