@@ -46,7 +46,8 @@
         loadCharts1("chartContainer1");
         loadCharts2("chartContainer2");
     }
-
+    var myVar = setInterval(myTimer, 10000);
+    loadCharts3("chartContainer3");
 
     var loadCharts1 = function (selector) {
         d3.csv("data/5minutesago-1.csv").then(function(data) {
@@ -202,8 +203,7 @@
     };
 
 
-    var myVar = setInterval(myTimer, 10000);
-    loadCharts3("chartContainer3");
+    
     global.$d3 = d3;
     global.$('.carousel').carousel();   
     
