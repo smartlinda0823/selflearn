@@ -1,0 +1,62 @@
+/* Overall setup */
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    font-family: 'Noto Serif', serif;
+}
+
+
+/* Main-part-Map */
+#main-content {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: auto;
+}
+
+
+/* Main-part-graphs */
+
+#timeline-graphs section.container {
+
+    /* height = 220px*/
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+#timeline-graphs h2 {
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25em;
+}
+
+#timeline-graphs .item {
+    
+    position: absolute;
+    width: 520px;
+    top: 0;
+    right: 0;
+}
+
+#timeline-graphs .chart {
+    height: 500px;
+    width: auto;
+    margin: 0px;
+    margin-top: 20px;
+}
+#timeline-graphs p{
+    font-family: 'Noto Serif', serif;
+    margin-top: 20px;
+    text-align: justify;
+    font-size:100%;
+}
