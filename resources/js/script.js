@@ -43,17 +43,25 @@
         
     // }
 
-    function myTimer() {
+    function myTimer1() {
         loadCharts1("chartContainer1");
-        loadCharts2("chartContainer2");
+        //loadCharts2("chartContainer2");
     };
+     function myTimer2() {
+        //loadCharts1("chartContainer1");
+        loadCharts2("chartContainer2");
+    };   
+
     var myVar = function() {
-        setInterval(myTimer, 10000);
+        //setInterval(loadCharts1("chartContainer1"), 35000);
+        //setInterval(loadCharts2("chartContainer2"), 10000);
+        setInterval(myTimer1, 35000);
+        setInterval(myTimer2, 10000);
         loadCharts3("chartContainer3");
     };
 
     var loadCharts1 = function (selector) {
-        d3.csv("data/5minutesago-1.csv").then(function(data) {
+        d3.csv("data/wordcount/wordcount.csv").then(function(data) {
             var data1 = data;
             var chart = new CanvasJS.Chart(document.getElementById(selector), {
                 animationEnabled: true,
@@ -73,11 +81,11 @@
                     type: "column",
                     yValueFormatString: "###",
                     dataPoints: [
-                        { label: data1[0].HotHashtag, y: parseInt(data1[0].Number)},	
-                        { label: data1[1].HotHashtag, y: parseInt(data1[1].Number)},
-                        { label: data1[2].HotHashtag, y: parseInt(data1[2].Number)},
-                        { label: data1[3].HotHashtag, y: parseInt(data1[3].Number)},
-                        { label: data1[4].HotHashtag, y: parseInt(data1[4].Number)},       
+                        { label: data1[0].word, y: parseInt(data1[0].count)},	
+                        { label: data1[1].word, y: parseInt(data1[1].count)},
+                        { label: data1[2].word, y: parseInt(data1[2].count)},
+                        //{ label: data1[3].word, y: parseInt(data1[3].count)},
+                        //{ label: data1[4].word, y: parseInt(data1[4].count)},       
                     ]
                 }]
             });
@@ -88,7 +96,7 @@
 
     
     var loadCharts2 = function (selector) {
-        d3.csv("data/tophashtag-2.csv").then(function(data) {
+        d3.csv("data/hashtags/hashtags.csv").then(function(data) {
             var data2 = data;
             var chart = new CanvasJS.Chart(document.getElementById(selector), {
                 animationEnabled: true,
@@ -108,16 +116,16 @@
                     type: "column",
                     yValueFormatString: "###",
                     dataPoints: [
-                        { label: data2[0].hashtag, y: parseInt(data2[0].number)},	
-                        { label: data2[1].hashtag, y: parseInt(data2[1].number)},	
-                        { label: data2[2].hashtag, y: parseInt(data2[2].number)},	
-                        { label: data2[3].hashtag, y: parseInt(data2[3].number)},	
-                        { label: data2[4].hashtag, y: parseInt(data2[4].number)},	
-                        { label: data2[5].hashtag, y: parseInt(data2[5].number)},	
-                        { label: data2[6].hashtag, y: parseInt(data2[6].number)},	
-                        { label: data2[7].hashtag, y: parseInt(data2[7].number)},	
-                        { label: data2[8].hashtag, y: parseInt(data2[8].number)},
-                        { label: data2[9].hashtag, y: parseInt(data2[9].number)}	 
+                        { label: data2[0].hashtags, y: parseInt(data2[0].count)},	
+                        { label: data2[1].hashtags, y: parseInt(data2[1].count)},	
+                        { label: data2[2].hashtags, y: parseInt(data2[2].count)},	
+                        { label: data2[3].hashtags, y: parseInt(data2[3].count)},	
+                        { label: data2[4].hashtags, y: parseInt(data2[4].count)},	
+                        { label: data2[5].hashtags, y: parseInt(data2[5].count)},	
+                        { label: data2[6].hashtags, y: parseInt(data2[6].count)},	
+                        { label: data2[7].hashtags, y: parseInt(data2[7].count)},	
+                        { label: data2[8].hashtags, y: parseInt(data2[8].count)},
+                        { label: data2[9].hashtags, y: parseInt(data2[9].count)}	 
                     ]
                 }]
             });
